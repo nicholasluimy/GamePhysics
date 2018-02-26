@@ -1,0 +1,6 @@
+framework module Pods_GamePhysics_Tests {
+  umbrella header "Pods-GamePhysics_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

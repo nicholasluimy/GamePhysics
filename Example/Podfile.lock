@@ -1,0 +1,16 @@
+PODS:
+  - GamePhysics (0.1.0)
+
+DEPENDENCIES:
+  - GamePhysics (from `../`)
+
+EXTERNAL SOURCES:
+  GamePhysics:
+    :path: ../
+
+SPEC CHECKSUMS:
+  GamePhysics: 7512bb0760a6bbee28c36689fa94c5bdb01c3cec
+
+PODFILE CHECKSUM: cdffcca1be7e6a245fc0b4dfe5535a4743dd1be7
+
+COCOAPODS: 1.4.0

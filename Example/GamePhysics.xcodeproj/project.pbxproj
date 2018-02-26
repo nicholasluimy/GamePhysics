@@ -12,13 +12,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1B344C31ED585B458339306B /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		1B344C31ED585B458339306B /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* GamePhysics_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GamePhysics_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		B3C171078BEC36B735092253 /* GamePhysics.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = GamePhysics.podspec; path = ../GamePhysics.podspec; sourceTree = "<group>"; };
+		B3C171078BEC36B735092253 /* GamePhysics.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = GamePhysics.podspec; path = ../GamePhysics.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		BB30B21516E46EBDA97E0906 /* Pods-GamePhysics_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GamePhysics_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GamePhysics_Tests/Pods-GamePhysics_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		D511B3EB06C4C42FCAB2D862 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		D511B3EB06C4C42FCAB2D862 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		DF5DA208FCF7CE2B14244374 /* Pods-GamePhysics_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GamePhysics_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GamePhysics_Tests/Pods-GamePhysics_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		EB6905FFD2A47D3BDEB9F0DF /* Pods_GamePhysics_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GamePhysics_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -131,10 +131,6 @@
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
-					607FACCF1AFB9204008FA782 = {
-						CreatedOnToolsVersion = 6.3.1;
-						LastSwiftMigration = 0900;
-					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
 						LastSwiftMigration = 0900;
