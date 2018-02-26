@@ -1,0 +1,6 @@
+use_frameworks!
+target 'GamePhysics_Tests' do
+  pod 'GamePhysics', :path => '../'
+  
+  
+end
