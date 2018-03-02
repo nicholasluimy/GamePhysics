@@ -27,7 +27,7 @@ public class GameBubble: GameObject {
 }
 
 extension GameBubble: Comparable {
-    static func <(lhs: GameBubble, rhs: GameBubble) -> Bool {
+    public static func <(lhs: GameBubble, rhs: GameBubble) -> Bool {
         if lhs.origin.x != rhs.origin.x {
             return lhs.origin.x < rhs.origin.x
         } else {
