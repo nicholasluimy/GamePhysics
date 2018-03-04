@@ -28,7 +28,7 @@ public class GameObject: Hashable {
     public var velocity: CGVector
     public var size: CGSize
     public var uuid: UUID
-    public var view: UIView?
+    public var view: UIImageView?
     public var collisionType: GameObjectCollisionType
 
     public init(origin: CGPoint, velocity: CGVector, size: CGSize, collisionType: GameObjectCollisionType) {

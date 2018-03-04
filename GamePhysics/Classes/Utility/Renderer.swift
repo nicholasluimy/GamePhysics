@@ -34,7 +34,7 @@ public class Renderer {
     }
 
     /// Unrenders game object from the displayArea
-    public func unrender(_ gameObject: GameObject, animation: (UIView) -> Void) {
+    public func unrender(_ gameObject: GameObject, animation: (UIImageView) -> Void) {
         guard let objectView = gameObject.view else {
             return
         }
