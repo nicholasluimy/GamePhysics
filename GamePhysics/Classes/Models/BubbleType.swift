@@ -8,6 +8,11 @@ public enum BubbleType: String, Codable {
     case basicRed = "bubble-red"
     case basicOrange = "bubble-orange"
     case basicGreen = "bubble-green"
+    case specialIndestructible = "bubble-indestructible"
+    case specialStar = "bubble-star"
+    case specialBomb = "bubble-bomb"
+    case specialLightning = "bubble-lightning"
+    case specialMagnetic = "bubble-magnetic"
 
     public var nextBubbleType: BubbleType {
         if self == .empty {
