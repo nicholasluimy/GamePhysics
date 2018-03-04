@@ -34,12 +34,12 @@ public class Renderer {
     }
 
     /// Unrenders game object from the displayArea
-    public func unrender(_ gameObject: GameObject, animation: () -> Void) {
+    public func unrender(_ gameObject: GameObject, animation: (UIView) -> Void) {
         guard let objectView = gameObject.view else {
             return
         }
 
-        animation()
+        animation(objectView)
 
         objectView.removeFromSuperview()
     }
