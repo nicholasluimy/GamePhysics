@@ -41,7 +41,7 @@ public extension CGVector {
     }
 
     public static func getMagneticVector(of theta: CGFloat, distance: CGFloat) -> CGVector {
-        let strength = 50 / (distance * distance)
+        let strength = 30000 / (distance * distance)
         let magneticX = cos(theta) * strength
         let magneticY = sin(theta) * strength
 

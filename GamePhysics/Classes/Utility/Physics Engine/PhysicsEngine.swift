@@ -81,8 +81,9 @@ public class PhysicsEngine {
         gameObject.origin.x += gameObject.velocity.dx
         gameObject.origin.y += gameObject.velocity.dy
 
-        checkCollision(gameObject)
         updateVelocity(gameObject)
+        checkCollision(gameObject)
+
         renderDelegate?.notifyRendererToUpdate(gameObject)
     }
 
