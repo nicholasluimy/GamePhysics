@@ -9,13 +9,21 @@
 import Foundation
 import UIKit
 
+public enum ForceTypes {
+    case none
+    case magneticPull
+    case magneticPush
+}
+
 public class PhysicsEngine {
     public var gameObjects: [GameObject]
     public var renderDelegate: GameEngineProtocol?
     public var collisionDelegate: GameEngineProtocol?
+    public var forceObjectMap: [GameObject: ForceTypes]
 
     public init() {
         self.gameObjects = [GameObject]()
+        self.forceObjectMap = [GameObject: ForceTypes]()
         createDisplayLink()
     }
 
@@ -41,8 +49,11 @@ public class PhysicsEngine {
         self.collisionDelegate = collisionDelegate
     }
 
-    public func materialize(_ gameObject: GameObject) -> Bool {
+    public func materialize(_ gameObject: GameObject, forceType: ForceTypes) -> Bool {
         gameObjects.append(gameObject)
+        if forceType != .none {
+            forceObjectMap[gameObject] = forceType
+        }
         return true
     }
 
@@ -51,6 +62,7 @@ public class PhysicsEngine {
             return  false
         }
         gameObjects.remove(at: objectIndex)
+        forceObjectMap[gameObject] = nil
         return true
     }
 
@@ -70,8 +82,35 @@ public class PhysicsEngine {
         gameObject.origin.y += gameObject.velocity.dy
 
         checkCollision(gameObject)
-
+        updateVelocity(gameObject)
         renderDelegate?.notifyRendererToUpdate(gameObject)
+    }
+
+    private func updateVelocity(_ gameObject: GameObject) {
+        for (forceObj, forceType) in forceObjectMap {
+            switch forceType {
+            case .magneticPull:
+                let forceOrigin = forceObj.origin
+                // force "pulls" inwards, so angle from gameObject to force
+                let forceAngle = gameObject.origin.angleTo(forceOrigin)
+                let forceDistance = gameObject.origin.distanceTo(forceOrigin)
+                let magneticVector = CGVector.getMagneticVector(of: forceAngle, distance: forceDistance)
+
+                gameObject.velocity.additionWith(otherVector: magneticVector)
+
+            case .magneticPush:
+                let forceOrigin = forceObj.origin
+                // force "pushes" outwards, so angle from force to gameObject
+                let forceAngle = forceOrigin.angleTo(gameObject.origin)
+                let forceDistance = gameObject.origin.distanceTo(forceOrigin)
+                let magneticVector = CGVector.getMagneticVector(of: forceAngle, distance: forceDistance)
+
+                gameObject.velocity.additionWith(otherVector: magneticVector)
+
+            default:
+                return
+            }
+        }
     }
 
     private func checkCollision(_ gameObject: GameObject) {

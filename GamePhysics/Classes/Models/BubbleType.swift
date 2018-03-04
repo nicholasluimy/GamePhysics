@@ -13,7 +13,6 @@ public enum BubbleType: String, Codable {
     case specialBomb = "bubble-bomb"
     case specialLightning = "bubble-lightning"
     case specialMagnetic = "bubble-magnetic"
-    case specialIndestructible = "bubble-indestructible"
 
     public var nextBubbleType: BubbleType {
         if self == .empty {
