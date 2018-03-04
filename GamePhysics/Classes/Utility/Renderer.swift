@@ -9,13 +9,13 @@
 import Foundation
 import UIKit
 
-public enum UnrenderType {
+public  enum UnrenderType {
     case pop
     case drop
+    case remove
+    case lightning
     case bomb
     case star
-    case lightning
-    case remove
 }
 
 public class Renderer {
@@ -34,12 +34,10 @@ public class Renderer {
     }
 
     /// Unrenders game object from the displayArea
-    public func unrender(_ gameObject: GameObject, animation: (UIImageView) -> Void) {
+    public func unrender(_ gameObject: GameObject) {
         guard let objectView = gameObject.view else {
             return
         }
-
-        animation(objectView)
 
         objectView.removeFromSuperview()
     }
